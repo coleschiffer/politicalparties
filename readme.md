@@ -13,5 +13,5 @@
 * the file is runmodel.ipynd
 * saved results are in runmodels.html
 
-*Kelsey Krantz
-*Cole Schiffer
+*Kelsey Krantz*
+*Cole Schiffer*
