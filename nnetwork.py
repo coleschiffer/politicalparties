@@ -112,49 +112,12 @@ def column_work():
     	if not "label" in c:
     		cols.append(c)
     return cols
-'''
-EVALUATE THE RESULTS
-'''
-def eval(score, best_set, best_for_num_feats, co, k):
-    if k>0:#best set b
-        print("best_set", best_set[0][1][1])
-        print("score",score[1])
-    if k == 0:
-        best_set.append([co,score])
-    elif best_set[0][1][1] > score[1]:
-        best_set[0] = [co, score]
-    print(best_for_num_feats[len(co)])
-    if best_for_num_feats[len(co)][0] < score[1]:
-        best_for_num_feats[len(co)] = [co, score]
-def write_results(outcomes, best_set, best_for_num_feats):
-    for i in range(len(outcomes)):
-    	print(str(outcomes[i]) + "\n")
-    with open("mock_test.txt", "w", newline="") as f:
-        for i in range(len(outcomes)):
-            f.write(str(outcomes[i]))
-            f.write("\n")
-            print("Outcomes", str(outcomes[i]) + "\n")
-        for i in range(len(best_for_num_feats)-1):
-            f.write("Best questions for ")
-            f.write(str(i +1))
-            f.write(" features")
-            f.write(str(best_for_num_feats[i]))
-            f.write("\n")
-        f.write("Best accuracy overall")
-        f.write(str(best_set[0]))
 
 '''
 RUNNING THE NEURAL NET
 '''
 def run_network(allcols, dftrain, dftest, verbose=1):
-    #related to evaluting results
-    outcomes = []
-    best_for_num_feats = []
-    for num in range(2000):
-        best_for_num_feats.append(["", 0])
-    k = 0
-    best_set = [] 
-
+    
     train_results = []
     test_results = []
     for col in allcols:
@@ -207,13 +170,7 @@ def run_network(allcols, dftrain, dftest, verbose=1):
         #running the model on the training set
         history = model.fit(Xtrain, Ytrain, epochs=30, batch_size=32, verbose=verbose)
 
-        #evaluating with the test set
-        score = model.evaluate(Xtest, Ytest, batch_size=32)
-
         train_results.append(history.history)
         test_results.append(score)
-        outcomes.append([col, score])
-        print(col, score)
-        #related to evaluting results
-        k += 1
+
     return train_results, test_results
