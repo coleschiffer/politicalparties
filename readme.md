@@ -1,5 +1,5 @@
 # CS328 Final Project
-### Code that for our paper and presentation.
+### Code that went with our paper and presentation.
 ## Requirements:
 * [Keras - installation guide](https://keras.io)
 * [TensorFlow  - installation guide](https://www.tensorflow.org/install)
