@@ -1,15 +1,12 @@
 
-## What you need to run the code:
+## Requirements:
 * [Keras - installation guide](https://keras.io)
 * [TensorFlow  - installation guide](https://www.tensorflow.org/install)
 * [Scikit Learn - installation guide](https://scikit-learn.org/stable/install.html)
 * [Pandas - installation guide](https://pandas.pydata.org/pandas-docs/stable/install.html)
-* Random
-* Numpy
 
 
-
-## The best way of running out models is in our jupyter notebook.
+## Run Models in Jupyter Notebook.
 * the file is runmodel.ipynd
 * saved results are in runmodels.html
 
