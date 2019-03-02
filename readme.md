@@ -7,7 +7,7 @@
 * [Pandas - installation guide](https://pandas.pydata.org/pandas-docs/stable/install.html)
 
 
-## Run Models in Jupyter Notebook.
+## Run Models in Jupyter Notebook
 * the file is runmodel.ipynd
 * saved results are in runmodels.html
 
